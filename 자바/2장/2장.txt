@@ -1,0 +1,51 @@
+식별자(변수)이름 사용 주의
+가능 : _ , $ , 숫자 , 길이제한x , 대소문자 구분 , 한글
+불가능 : 첫번째 숫자x , 예약어(ex if while for) , %
+
+데이터 타입
+기본타입 : 8개
+1.  boolean
+2. char
+3. byte
+4. short
+5. int
+6. long
+7. float
+8. double
+래퍼런스타입 : 1개
+용도 3가지
+1. 배열
+2. 클래스
+3. 인터페이스?
+
+리터럴 : 프로그램에 직접 표현한 값('_'는 빼고 읽는다.
+int a = 30_0; 이라 했을때 30_0은 300이라는 리터럴이다.ㅓ
+
+var를 이용한 변수 선언 : 자동으로 타입이 결정됨(초기화 하지 않으면 에러)
+var a = 30; 	a는 자동으로 int가 된다.
+
+상수 표현 : final 키워드를 사용하면 된다.(const 키워드랑 똑같다.)
+final int a =30;   	a는 상수
+
+자동타입변환 
+작음>큼 가능
+큼 => 작음 불가능(데이터 손실)
+
+(byte)(128+128)+(int)22.9 = 22이다.
+
+자바에서의 키입력
+System.in 자바의 표준 입력 스트림(scanf같은 친구) : 불편하다.
+Scanner클래스를 이용해 입력받는다.
+import 문이 필요하며 맨앞줄에 선언해야한다. (package 뒤에) import java.util.Scanner;
+Scanner scanner = new Scanner(System.in); => Scanner 클래스의 객체 scanner 생성
+타입에 따른 입력 방법
+int a = scanner.nextint();
+String a = scanner.next();
+double a = scanner.nextDouble();
+boolean a =scanner.nextBoolean();
+String a = scanner.nextLine(); => 개행문자도 같이 읽어들인다.
+
+개발 주의사항
+1. printf의 형식지정자에서 byte 는 %d float double 은 %f, boolean은 %b이다.
+2. 비트연산에서 ^는 베타적 논리합이다. (다르면 1 같으면 0)
+3. 시프트 연산에서 b>>2 는 4로 나눈것, b<<3 8을 곱한것이다.

@@ -1,0 +1,40 @@
+||1. nonlocal 변수||
+
+def outer(x):
+    y = 10
+    def inner():
+        #nonlocal x 를 적어주면 10리턴, 아니라면 x=1000 이니 1000리턴
+        #x = 1000
+        return x
+
+    return inner()
+
+>>> print(outer(10))
+
+||2. 클로저(closure)||
+	: 자신을 둘러싼 스코프의 상태값을 기억하는 함수 : wrapper 함수(데코레이션의)
+
+1. 클로저여야하는 세가지 조건
+	1) 해당함수는 어떤 함수 내의 중첩된 함수여야한다.
+	2) 해당 함수는 자신을 둘러싼(enclose) 함수 내의 상태값을 반드시 참조해야 한다.
+	3) 해당 함수를 둘러싼 함수는 이 함수를 반환해야 한다.
+
+
+2. cache 메모리 이용
+
+def deco(fuc):
+  cache = {}
+  def wrapper(n):
+    if n in cache:
+      return cache[n]
+    else :
+      cache[n] = fuc(n)
+      return cache[n]
+  return wrapper
+
+데코레이션 이지만 fuc의 함수값을 cache 변수에 계속 저장하여 효율을 높힌다.!!!
+
+
+fibo = deco(fibo)랑
+fibo_2 = deco(fibo)랑 차이점?!?!?!?!
+질문!!

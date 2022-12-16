@@ -1,0 +1,20 @@
+	1. 모듈
+		1) 다른 파일을 참조 하고싶을때 같은 디렉토리의 .py파일을 import mod 한다.
+		2) mod.py의 add()함수를 사용하고 싶다면 mod.add()를 이용해 호출한다.
+		3) mod없이 add()를 호출하고 싶다면 from mod import add 선언하여 add()호출 가능
+
+	2. 패키지
+		1) 모듈을 파일로 묶어 관리하는것
+
+
+	3. 예외처리
+		1) try : , except 문
+			try :
+			except ZerodivisionError :
+				print("0으로 나눌수 없습니다")
+			else :
+				print("0으로 나누는데 성공했습니다.")
+
+		2) raise 에러명() => 에러 강제 발동
+
+

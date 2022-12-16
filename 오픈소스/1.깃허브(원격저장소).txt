@@ -1,0 +1,18 @@
+1. 프로토콜
+2. URL
+3. 별칭사용법
+4. readme.file 이유
+5. 로컬 저장소 연결방법 2가지
+https://github.com/Leewonchan14/gitstudy05.git
+6. git remote 명령어
+7. push와 fetch 암기
+	1) push : 서버에 전송 => git push 원격저장소별칭 브랜치이름
+	2) fetch : 실행된뒤 원격저장소의 커밋들만 가져왔을뿐 로컬 저장소에서는 어떤 작업도 하지 않았다.
+8. 내려받기
+	1) 자동으로 내려받기
+		clone 명령어	: 처음으로 서버에서 코드를 내려받을땐 이게 편하다 ,현재 커밋보다 더 최신 커밋정보가 있을때,혼자할때 쓰자
+		pull 명령어	: 
+
+9. 순서(두사람이 push, pull을할때 
+
+현재 gitstudy05 => Leewonchan14 => gitclone05 방향으로 업데이트중이다.

@@ -1,0 +1,19 @@
+	3. 내장함수들
+
+
+	2. 라이브러리
+1. 명령행에서 인수 전달하기 : import sys
+	1) sys.argv에는 명령인자가 리스트로 저장된다.
+	2) sys.exit() : 스크립트 종료
+
+2. 객체를 파일에 불러오거나 저장하기 : import pickle
+	리스트면 리스트, 디렉토리면 디렉토리 그대로 형식을 지켜 불러오거나 저장한다
+
+3. 시간과 관련된 : time
+	1) time.localtime(time.time()) : time.time()이 반환한 실수 날짜데이터를 연도,월,일,시,분,초의 형태로 바꾸어 주는 함수
+	2) time.strftime('출력할 형식 포맷 코드', time.localtime(time.time())))
+
+4.  랜덤 관련된 random
+	1) random.radom() : 0부터1사이의 실수 반환
+	2) random.ranint(a,b) : a부터b사이의 난수중 반환(a,b포함)
+	

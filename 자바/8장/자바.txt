@@ -1,0 +1,32 @@
+||1. 스트림 입출력||
+	: 입력이나 출력때 스트림으로 입출력된다.
+	특징
+	1) 선입 선출구조이다.
+	2) 단방향이다.
+
+||Stream으로 끝나는 클래스는 Byte단위로 읽어들인다, Reader로 끝나는 클래스는 문자단위로 읽는다.||
+
+||2. 파일 입출력을 위해 ||
+	1. 파일 읽기 위한 객체 생성
+		FileReader fin = new FileReader ("c:\\test.txt");	# 파일이 없는 경우 예외, 파일의 접근권한이 없어도 예외
+							# 파일이 없는경우 예외 확실히 처리!!!
+
+		fin.read()  		# 1바이트씩(아스키코드값) 읽어 int타입으로 반환한다.
+				# 파일의 끝을 만나면 -1 리턴
+
+		fin.close()		# 사용한뒤에는 닫아야한다.
+
+	2. 한글 읽기(영어도 같이 가능)(FileInputStream,InputStreamReader)
+		FileInputStream fin = new FileInputStream("c:\\test.txt");		#
+		InputStreamReader in = new InputStream(fin, "MS949");	# 윈도우에서 한글을 열때 MS949
+		in.read();						# char로 변환해 사용(반환값을)
+
+	3. 파일쓰기(FileWriter)
+		FIleWriter fout = new FileWriter(파일명);			#덮어쓰기
+								
+		fout.write('A') 또는 fout.write(배열객체,처음인덱스,마지막인덱스)	# 쓰기
+									# 한줄 쓸때마다 fout.write("\n또는\r\n",0,2) 적어주기
+									# 터미널 그대로 입력은 \r\n을 이용!
+||3. 바이트 스트림 클래스||
+	
+	1. File

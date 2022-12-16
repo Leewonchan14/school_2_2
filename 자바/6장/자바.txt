@@ -1,0 +1,86 @@
+1. 패키지는 파일과 비슷하게 생각하면 된다.
+
+	lib패키지에 Calculator 클래스를 사용할때
+	import lib.Calculator 해주면 된다.
+
+2. 모듈
+	패키지와 이미지 등의 리소스를 담은 컨테이너
+	.jmod 로 저장
+
+
+3. object 클래스
+	:모든 클래스에 상속되어있는 조상님 클래스
+	들어있는 메소드
+		1. String toString()(객체의 표현을 문자열로 반환) =>오버라이딩해서 사용하는경우가 있다.
+		2. boolean equals(object b)(래퍼런스 값이 같으면 True 다르면 False)=>오버라이딩 해서 사용하는경우가 있다.
+		3. int hashCode() (현 객체의 해시코드값을 출력)
+
+
+4. Wrapper 클래스 : 자바의 기본타입을 클래스화한 8개 클래스(Wrapper이름의 클래스는 없다.)
+	byte => Byte (보통 첫글자 대문자)
+
+	예외 int, char
+	Integer, Character
+
+	객체 생성
+	Integer i = Integer.valueOF(10);
+	객체 i값을 얻기 위해 i.integerValue();
+	Wrapper 객체들은 거의 static 메소드이다.
+	Integer 객체의 메소드 중 대표적으로 사용하는 메소드
+	1. float floatvalue()
+	2. int intvalue()
+	3. long longvalue()
+	4.short shortvalue()
+		타입 캐스팅이라 생각하면 됨
+
+5. 박싱 언박싱
+	Integer ten = 10; => 10이라는 상수가 Integer객체로 자동 박싱됨
+
+	int i = ten => 객체 ten이 언박싱 되어 i에 10이 대입
+
+6. String 클래스
+	: String 타입은 객체이다.
+	1)String s = "Hello"
+		: 버추얼머신이 문자열 상수(리터럴)을 관리 한다. = 공유됨(반복시 객체 하나만 생성됨)
+
+	2)String t = new String("Hello")
+		: 힙 메모리에(동적할당이라) String객체 생성
+
+	3)String관련 메소드들을 사용할때 새로운객체들을 계속 생성한다.
+	4)내용이 같은지 확인할때 .equals(String)메소드 사용
+	5) 자주쓰는 매소드 :
+		1. s.length() =>int 길이 반환
+		2. s.contains("s2") => s2가 포함되는지 BOOL값 반환
+		3. s = s.concat("s2") => s+s2 의 새로운 문자열 반환
+		4. s.trim() =>앞뒤 공백 제거후 반환
+		5. s.replace("old","new")
+		6. String s2[ ] = s.split(" ") => 구분자에 의해 문자열 배열이 반환
+		7. String a = s.substring(5) => 인덱스 5부터 끝까지 반환
+		8. char a = s.charAt(2) => 인덱스 2의 문자 반환
+
+7. StringBuffer 클래스
+	1) 버퍼(빈공간)을 가지고 있다.
+	2) 16의 크기가 첨음에 주어지고 커질때마다 *2+2 씩 커진다.
+	3) 자주쓰는 메소드
+		1. s.append("s2") => 문자열 덧붙히기
+		2. s.insert(index,"s2") = > 인덱스7번에 문자열 s2삽입
+
+8. StringTokenizer 클래스 : 의미를 가지는 가장 작은 단위로 나누기
+	1) 구분자 : delimiter
+	2) String 클래스의 split과 비슷한 기능
+	3) c의 strtok 와 똑같은 기능
+
+	4) 자주쓰는 메소드
+		1. 객체.nexToken() => 다음 토큰 반환
+		2. 객체.hasMoreToken() => 더반환할게 있으면 True 아니면 False
+
+9. Math 클래스
+	import java.lang.Math 로 스태틱 함수 Math.random() 사용가능
+
+10. Calendar 클래스
+	: 시간 날짜 정보 다 저장 관리
+	1) 객체 생성 Calendar now = Calendar.getInstance(); => 현재 시각 가져옴
+	2) 필드 변수
+		1. YEAR,MONTH(0~11),HOUR 등등
+
+

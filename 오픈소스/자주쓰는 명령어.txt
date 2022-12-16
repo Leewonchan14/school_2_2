@@ -1,0 +1,14 @@
+1. git help --all
+2. git --version
+3. git config --unset 이메일주소
+4. mkdir gitstudy04
+5. cd gitstudy04
+6. cat index.htm 내용확인
+7. code index.htm
+8. git init
+9. ls -a
+10. ls
+11. git add gitstudy04
+12. git status
+13. git clone URL 새폴더이름
+
