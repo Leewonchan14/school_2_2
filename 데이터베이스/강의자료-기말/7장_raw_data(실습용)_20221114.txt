@@ -55,3 +55,28 @@ INSERT INTO order_table (or_No, or_Customer, or_Product, or_Amount, or_Address) 
 INSERT INTO order_table (or_No, or_Customer, or_Product, or_Amount, or_Address) VALUES ('o08','pear','p02',50, '강원도 춘천시');
 INSERT INTO order_table (or_No, or_Customer, or_Product, or_Amount, or_Address) VALUES ('o09','banana','p04',15, '전라남도 목포시');
 INSERT INTO order_table (or_No, or_Customer, or_Product, or_Amount, or_Address) VALUES ('o10','carrot','p03',20, '경기도 안양시');
+
+insert into member_table values ('strawberry','최유경',30,'vip','공무원',100);
+
+update product_table set po_Name = '통큰파이' where po_ID='p03';
+
+update product_table set po_Price = po_Price*1.1;
+
+update order_table set or_Amount = 5 where or_Customer = 
+(select cu_ID from member_table where cu_Name = '정소화');
+
+create view 업체별제품수
+as select po_Company,count(po_Company) from product_table
+group by po_Company;
+
+create view 우수고객
+as select cu_ID,cu_Name,cu_Age from member_table
+where cu_Level = 'vip';
+
+
+
+select * from 우수고객 where cu_Age >= 25;
+
+
+
+
